@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     >
       <body className="flex min-h-full flex-col bg-white">
         <Navbar />
-        <main className="grow container mx-auto p-4">
+        <main className="grow container mx-auto bg-orange-200/40">
           {children}
         </main>
         <Footer />

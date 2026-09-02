@@ -3,8 +3,17 @@ export const metadata = {
   description: "Data Product Page",
 };
 
-export default function Products() {
+export default async function Products() {
+  const res = await fetch('https://fakestoreapi.com/products')
+  const products = res.json()
+
   return (
-    <div>Products</div>
+    <div>
+      <section>
+        {products.map(product => (
+          <div></div>
+        ))}
+      </section>
+    </div>
   )
 }

@@ -1,4 +1,5 @@
-import Image from "next/image";
+import ArticleCard from "@/components/card/ArticleCard";
+
 export const metadata = {
   title: "Dara | Home",
   description: "Dara Home Page",
@@ -6,6 +7,18 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div>Home Page</div>
+    <div>
+      <section className="h-screen bg-orange-200/40">
+
+      </section>
+      <section className="p-8 space-y-8">
+        <h2 className="text-3xl font-bold text-center">Articles</h2>
+        <div className="flex">
+          <ArticleCard />
+          <ArticleCard />
+          <ArticleCard />
+        </div>
+      </section>
+    </div>
   );
 }
