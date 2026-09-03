@@ -1,4 +1,5 @@
 import ArticleCard from "@/components/card/ArticleCard";
+import Accordion from "@/components/generals/Accordion"
 
 export const metadata = {
   title: "Dara | Home",
