@@ -1,12 +1,12 @@
-import React from 'react'
+
 
 export default function CheckoutCard({ product }) {
     return (
         <div className='py-4'>
             <div className='flex gap-4 justify-between'>
                 <div className='flex gap-4'>
-                    <div className='bg-secondary rounded-xl p-4 w-1/4'>
-                        <img src={product.image} />
+                    <div className='flex justify-center items-center bg-secondary rounded-xl p-4 w-1/4'>
+                        <img className="w-20" src={product.image} />
                     </div>
                     <div>
                         <h2 className='text-xl font-bold'>

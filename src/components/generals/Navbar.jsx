@@ -4,7 +4,7 @@ export default function Navbar() {
     return (
         <nav className='sticky top-0 z-50 bg-white shadow'>
             <div className='container mx-auto flex items-center justify-between p-4'>
-                <Link href={'/'} className='hover:text-blue-600 text-2xl'>Dara</Link>
+                <Link href={'/'} className='text-2xl'>Dara</Link>
                 <menu>
                     <ul className='md:flex space-x-6'>
                         <li><Link href={'/'} className='hover:text-blue-600'>Home</Link></li>
