@@ -5,8 +5,7 @@ import useCartStore from '@/store/cart-store'
 
 export default function Checkout() {
   const cart = useCartStore(s => s.cart)
-  console.log(cart);
-  
+
   return (
     <section className='w-full flex justify-around p-8'>
       <div className='flex justify-between gap-8'>

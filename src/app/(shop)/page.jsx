@@ -20,7 +20,7 @@ export default function Home() {
           <ArticleCard />
         </div>
       </section>
-      <section className="flex justify-center items-center p-8 bg-amber-500/50">
+      <section className="flex justify-center items-center py-16 bg-orange-200/40">
         <Accordion />
       </section>
     </div>
