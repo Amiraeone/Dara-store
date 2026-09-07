@@ -1,6 +1,11 @@
+'use client'
 import Link from 'next/link'
-
+import '@/app/globals.css'
+import useCartStore from '@/store/cart-store'
 export default function Navbar() {
+    const cart = useCartStore(s => s.cart)
+    console.log(cart);
+    
     return (
         <nav className='sticky top-0 z-50 bg-white shadow'>
             <div className='container mx-auto flex items-center justify-between p-4'>
@@ -14,8 +19,14 @@ export default function Navbar() {
                 </menu>
                 <div className='flex items-center space-x-4'>
                     <Link href={'/checkout'}>
-                        <button className='bg-blue-700 rounded-lg text-white shadow px-4 py-2 cursor-pointer'>
+                        <button className='bg-blue-700 relative rounded-lg text-white shadow px-4 py-2 cursor-pointer'>
                             Checkout 🛒
+                            {cart.length > 0 && <div className='absolute -left-2 -top-2'>
+                                <span className="relative flex size-3">
+                                    <span className="absolute inline-flex size-3 p-2 animate-ping rounded-full bg-red-400 opacity-75"></span>
+                                    <span className="relative size-3 rounded-full p-2 flex justify-center items-center bg-red-500">{cart.length}</span>
+                                </span>
+                            </div>}
                         </button>
                     </Link>
                 </div>
