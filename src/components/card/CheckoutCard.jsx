@@ -12,7 +12,7 @@ export default function CheckoutCard({ product }) {
     return (
         <div className='p-4 hover:bg-secondary rounded duration-300 h-40'>
             <div className='h-full flex gap-2 justify-between'>
-                <div className='flex-2 flex justify-center items-center bg-secondary rounded-xl p-4 w-1/4'>
+                <div className='flex-2 flex justify-center items-center bg-secondary rounded-xl p-4'>
                     <img className="h-20" src={product.image} />
                 </div>
                 <div className='flex-5 ml-4'>
