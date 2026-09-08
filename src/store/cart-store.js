@@ -12,18 +12,26 @@ const useCartStore = create(
 
                 if (isExistProduct) {
                     return {
-                        cart: [...state.cart],
+                        cart: state.cart.map(item => item.id === product.id ? { ...product, quantity: item.quantity + 1 } : item),
                         loading: false
                     }
                 } else {
                     localStorage.setItem('cart', JSON.stringify([...state.cart, product]))
                     return {
-                        cart: [...state.cart, product],
+                        cart: [...state.cart, { ...product, quantity: 1 }],
                         loading: false
                     }
                 }
             }),
-            removeFromCart: (productId) => set(state => ({ cart: state.cart.filter(item => item.id !== productId) }))
+            removeFromCart: (product, removeAll) => set(state => {
+                if (product.quantity == 1 || removeAll) {
+                    return { cart: state.cart.filter((item => item.id !== product.id)) }
+                } else {
+                    return {
+                        cart: state.cart.map(item => (item.id === product.id ? { ...product, quantity: product.quantity - 1 } : item))
+                    }
+                }
+            }),
         }),
         {
             name: 'cart-storage',

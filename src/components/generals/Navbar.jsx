@@ -1,11 +1,10 @@
 'use client'
-import Link from 'next/link'
 import '@/app/globals.css'
 import useCartStore from '@/store/cart-store'
+import Link from 'next/link'
 export default function Navbar() {
     const cart = useCartStore(s => s.cart)
-    console.log(cart);
-    
+
     return (
         <nav className='sticky top-0 z-50 bg-white shadow'>
             <div className='container mx-auto flex items-center justify-between p-4'>
