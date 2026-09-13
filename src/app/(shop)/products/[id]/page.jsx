@@ -6,6 +6,21 @@ import {
     BreadcrumbList,
     BreadcrumbSeparator
 } from "@/components/ui/breadcrumb"
+import Image from 'next/image'
+import Link from 'next/link'
+
+
+export async function generateMetadata({ params }) {
+    const { id } = await params
+
+    const res = await fetch(`https://fakestoreapi.com/products/${id}`)
+    const product = await res.json()
+
+    return {
+        title: product.title,
+        description: "Data Product Page",
+    }
+}
 
 export default async function page({ params }) {
     const { id } = await params
@@ -16,17 +31,19 @@ export default async function page({ params }) {
     return (
         <section className='px-8 py-4 flex justify-between'>
             <div className='flex-3 flex justify-center items-center bg-secondary rounded-xl p-4'>
-                <img className='h-80' src={product.image} />
+                <div className='relative h-80 w-full'>
+                    <Image fill sizes='1' alt={product.title} className='object-contain' src={product.image} />
+                </div>
             </div>
             <div className='flex-4 p-4 space-y-2'>
                 <Breadcrumb>
                     <BreadcrumbList>
                         <BreadcrumbItem>
-                            <BreadcrumbLink render={<a href="/products" />}>Product</BreadcrumbLink>
+                            <BreadcrumbLink render={<Link href="/products" />}>Product</BreadcrumbLink>
                         </BreadcrumbItem>
                         <BreadcrumbSeparator />
                         <BreadcrumbItem>
-                            <BreadcrumbLink render={<a href={`/products?category=${product.category}`} />}>
+                            <BreadcrumbLink render={<Link href={`/products?category=${product.category}`} />}>
                                 {product.category}
                             </BreadcrumbLink>
                         </BreadcrumbItem>
