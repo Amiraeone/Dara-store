@@ -1,4 +1,5 @@
-import ProductCard from "@/components/card/ProductCard";
+import ProductCard from "@/components/products/ProductCard";
+import ProductsFilter from "@/components/products/ProductsFilter";
 
 export async function generateMetadata({ searchParams }) {
   const { category } = await searchParams
@@ -11,19 +12,22 @@ export async function generateMetadata({ searchParams }) {
 export default async function Products({ searchParams }) {
   const { category } = await searchParams
 
+
   const res = await fetch('https://fakestoreapi.com/products', {
     next: {
       revalidate: 5
     }
   })
-  const products = await res.json()
-  const categoryProducts = category && products.filter(item => item.category === category)
 
-  return <section className="flex gap-4 p-8 flex-wrap">
-    {category ? categoryProducts.map(product => (
-      <ProductCard key={product.id} product={product} />
-    )) : products.map(product => (
-      <ProductCard key={product.id} product={product} />
-    ))}
+  const productsData = await res.json()
+  const products = category ? productsData.filter(item => item.category == category) : productsData
+
+  return <section className="flex">
+    <ProductsFilter products={productsData} />
+    <div className="flex-10 flex justify-center gap-4 p-8 flex-wrap">
+      {products.map(product => (
+        <ProductCard key={product.id} product={product} />
+      ))}
+    </div>
   </section>
 }
