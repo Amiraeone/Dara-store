@@ -7,7 +7,9 @@ export default function ProductCard({ product }) {
             <Link href={`/products/${product.id}`}>
                 <div className='rounded-lg shadow overflow-hidden w-48 cursor-pointer hover:scale-105 transition'>
                     <div className='flex justify-center items-center p-4 w-full h-26'>
-                        <Image alt={product.title} className='h-20' src={product.image} />
+                        <div className='relative h-20 w-full'>
+                            <Image fill alt={product.title} className='object-contain' src={product.image} />
+                        </div>
                     </div>
                     <div className='flex flex-col p-4 space-y-2 h-1/2'>
                         <h2 className='text-lg font-bold line-clamp-2 h-14'>{product.title}</h2>
