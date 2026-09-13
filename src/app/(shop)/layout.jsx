@@ -1,6 +1,7 @@
 import Navbar from "@/components/generals/Navbar";
 import "../globals.css";
 import Footer from "@/components/generals/Footer";
+import { Toaster } from "@/components/ui/toast";
 
 export const metadata = {
   title: "Dara",
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
       className={`h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-white">
+        <Toaster />
         <Navbar />
         <main className="grow container mx-auto">
           {children}

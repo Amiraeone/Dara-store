@@ -3,6 +3,7 @@
 import { Spinner } from "@/components/ui/spinner"
 import useCartStore from '@/store/cart-store'
 import ProductQuantity from "./ProductQuantity"
+import { toast } from "@/components/ui/toast"
 
 export default function AddToCart({ product, children }) {
     const cart = useCartStore(s => s.cart)
@@ -12,7 +13,10 @@ export default function AddToCart({ product, children }) {
 
 
     return <>
-        {!existInCart ? <button disabled={loading} onClick={() => addToCart(product)} className='px-4 py-2 bg-blue-700 rounded-lg text-white hover:bg-blue-700/90 cursor-pointer'>
+        {!existInCart ? <button disabled={loading} onClick={() => {
+            addToCart(product)
+            toast.add({type: 'success' , description: 'Successfully Added To Your Cart'})
+        }} className='px-4 py-2 bg-blue-700 rounded-lg text-white hover:bg-blue-700/90 cursor-pointer'>
             {loading ? <Spinner data-icon="inline-start" /> : children}
         </button>
             : <div className="flex justify-between items-center gap-2">

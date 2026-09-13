@@ -6,6 +6,7 @@ import ProductQuantity from '../ProductQuantity'
 import { Button } from '../ui/button'
 import { ButtonGroup } from '../ui/button-group'
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
+import { toast } from '../ui/toast'
 
 export default function CheckoutCard({ product }) {
     const [open, setOpen] = useState(false)
@@ -39,6 +40,10 @@ export default function CheckoutCard({ product }) {
                                             <Button onClick={() => {
                                                 removeFromCart(product, true)
                                                 setOpen(false)
+                                                toast.add({
+                                                    type: 'error',
+                                                    description:'product deleted successfully from cart'
+                                                })
                                             }} variant='destructive'>Delete</Button>
                                             <Button onClick={() => setOpen(false)} variant='outline'>Cancel</Button>
                                         </ButtonGroup>

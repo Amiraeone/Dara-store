@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function ProductCard({ product }) {
@@ -6,7 +7,7 @@ export default function ProductCard({ product }) {
             <Link href={`/products/${product.id}`}>
                 <div className='rounded-lg shadow overflow-hidden w-48 cursor-pointer hover:scale-105 transition'>
                     <div className='flex justify-center items-center p-4 w-full h-26'>
-                        <img className='h-20' src={product.image} />
+                        <Image alt={product.title} className='h-20' src={product.image} />
                     </div>
                     <div className='flex flex-col p-4 space-y-2 h-1/2'>
                         <h2 className='text-lg font-bold line-clamp-2 h-14'>{product.title}</h2>
