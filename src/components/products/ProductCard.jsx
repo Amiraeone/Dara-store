@@ -8,7 +8,7 @@ export default function ProductCard({ product }) {
                 <div className='rounded-lg shadow overflow-hidden w-48 cursor-pointer hover:scale-105 transition'>
                     <div className='flex justify-center items-center p-4 w-full h-26'>
                         <div className='relative h-20 w-full'>
-                            <Image fill alt={product.title} className='object-contain' src={product.image} />
+                            <Image fill alt={product.title} sizes='1' className='object-contain' src={product.image} />
                         </div>
                     </div>
                     <div className='flex flex-col p-4 space-y-2 h-1/2'>
