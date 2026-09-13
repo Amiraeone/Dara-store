@@ -1,8 +1,8 @@
 'use client'
 
 import CheckoutCard from '@/components/card/CheckoutCard'
+import Empty from '@/components/Empty'
 import useCartStore from '@/store/cart-store'
-import { PackageOpen } from 'lucide-react'
 
 export default function Checkout() {
   const cart = useCartStore(s => s.cart)
@@ -11,14 +11,7 @@ export default function Checkout() {
 
   if (cart.length === 0) {
     return (
-      <section className='w-full h-80 flex justify-center items-center'>
-        <div className='flex flex-col justify-center items-center w-2/4 h-2/4 py-8 px-12 bg-secondary rounded-xl shadow'>
-          <PackageOpen className='text-gray-500 w-11 h-11' />
-          <h2 className='text-lg text-gray-500 font-bold'>
-            there is no item
-          </h2>
-        </div>
-      </section>
+      <Empty />
     )
   }
 
@@ -40,21 +33,20 @@ export default function Checkout() {
               <span className='text-md'>Total Products Price ({cart.length} product)</span>
               <span className='text-md'>${totalPrice}</span>
             </div>
-            {
-              cartItemsPrice.map(product => (
-                <div key={product.id}>
-                  <div className='flex justify-between gap-2'>
-                    <span className='text-md'>{product.title} ({product.quantity} item)</span>
-                    <span className='text-md'>${(product.totalPrice).toFixed(2)}</span>
-                  </div>
-                  {product.discount > 0 && (
-                    <div className='flex justify-between'>
-                      <span className='text-xs'>discount: %{product.discount} ({((product.totalPrice / 100) * product.discount).toFixed(2)})</span>
-                      <span className='text-xs'>${(product.totalPrice - ((product.totalPrice / 100) * product.discount)).toFixed(2)}</span>
-                    </div>
-                  )}
+            {cartItemsPrice.map(product => (
+              <div key={product.id}>
+                <div className='flex justify-between gap-2'>
+                  <span className='text-md'>{product.title} ({product.quantity} item)</span>
+                  <span className='text-md'>${(product.totalPrice).toFixed(2)}</span>
                 </div>
-              ))
+                {product.discount > 0 && (
+                  <div className='flex justify-between'>
+                    <span className='text-xs'>discount: %{product.discount} ({((product.totalPrice / 100) * product.discount).toFixed(2)})</span>
+                    <span className='text-xs'>${(product.totalPrice - ((product.totalPrice / 100) * product.discount)).toFixed(2)}</span>
+                  </div>
+                )}
+              </div>
+            ))
             }
             <div className='flex justify-between'>
               <span className='text-lg font-bold'>Total Cart Price</span>
