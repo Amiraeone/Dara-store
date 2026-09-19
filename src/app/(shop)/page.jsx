@@ -31,15 +31,15 @@ export default function Home() {
         <div className="max-md:hidden w-3/5! flex-6 h-full gap-2 flex justify-center items-center">
           <div className="w-1/2 h-full mt-36">
             <div className="h-lvh relative top-22 overflow-visible">
-              <Image alt="clothes pictuer" className="object-contain" fill src='/images/style2.jpg' />
+              <Image preload={true} alt="clothes pictuer" className="object-contain" fill src='/images/style2.jpg' />
             </div>
           </div>
           <div className="w-1/2 h-full flex-col justify-between pr-4">
             <div className="h-1/2 relative bottom-16 overflow-y-hidden mask-t-from-25% mask-t-to-99%">
-              <Image alt="clothes pictuer" className="object-cover shadow" fill src='/images/style3.jpg' />
+              <Image preload={true} alt="clothes pictuer" className="object-cover shadow" fill src='/images/style3.jpg' />
             </div>
             <div className="h-1/2 relative overflow-y-hidden mask-b-from-25% mask-b-to-97%">
-              <Image alt="clothes pictuer" className="object-cover object-top shadow" fill src='/images/style4.jpg' />
+              <Image preload={true} alt="clothes pictuer" className="object-cover object-top shadow" fill src='/images/style4.jpg' />
             </div>
           </div>
         </div>
