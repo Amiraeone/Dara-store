@@ -14,10 +14,10 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-white">
+      <body className="flex min-h-full overflow-x-hidden flex-col bg-white">
         <Toaster />
-        <Navbar />
-        <main className="grow container mx-auto">
+        <Navbar page='Home' />
+        <main className="grow w-full mx-auto">
           {children}
         </main>
         <Footer />

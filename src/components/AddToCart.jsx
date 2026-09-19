@@ -17,7 +17,7 @@ export default function AddToCart({ product, children }) {
         {!existInCart ? <button disabled={loading} onClick={() => {
             addToCart(product)
             toast.add({ type: 'success', description: 'Successfully Added To Your Cart' })
-        }} className='px-4 py-2 bg-blue-700 rounded-lg text-white hover:bg-blue-700/90 cursor-pointer'>
+        }} className='px-4 py-2 bg-red-800 rounded-lg text-white hover:bg-red-800/90 cursor-pointer'>
             {loading ? <Spinner data-icon="inline-start" /> : children}
         </button>
             : <div className="flex justify-between items-center gap-2">

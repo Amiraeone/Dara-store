@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function ProductCard({ product }) {
     return (
         <div>
-            <Link href={`/products/${product.id}`}>
+            <Link href={`/products/${product.id}`}  className='text-black'>
                 <div className='rounded-lg shadow overflow-hidden w-48 cursor-pointer hover:scale-105 transition'>
                     <div className='flex justify-center items-center p-4 w-full h-26'>
                         <div className='relative h-20 w-full'>

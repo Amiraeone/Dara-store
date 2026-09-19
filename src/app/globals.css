@@ -134,4 +134,8 @@
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
+
+  a:hover {
+    color: #ffb86a;
+  }
 }

@@ -52,7 +52,7 @@ export default function Checkout() {
               <span className='text-lg font-bold'>Total Cart Price</span>
               <span className='text-lg font-bold'>${totalPrice}</span>
             </div>
-            <button className='px-4 py-2 bg-blue-700 rounded-lg text-white hover:bg-blue-700/90 cursor-pointer'>Payment</button>
+            <button className='px-4 py-2 bg-red-900 rounded-lg text-white hover:bg-red-900/90 cursor-pointer'>Payment</button>
           </div>
         </div>
       </div>

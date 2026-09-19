@@ -16,7 +16,7 @@ export default function ProductsFilter({ products }) {
     }
 
     return (
-        <aside className='h-screen flex flex-3 flex-col gap-4 p-4 border-r-2 sticky top-10'>
+        <aside className='h-screen flex flex-3 flex-col gap-4 p-4 border-r-2 sticky top-20'>
             <h2 className='font-bold text-2xl'>Filters</h2>
             <div className='flex gap-2'>
                 <div className='space-y-4'>

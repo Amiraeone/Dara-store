@@ -18,7 +18,6 @@ export default async function Products({ searchParams }) {
       revalidate: 5
     }
   })
-
   const productsData = await res.json()
   const products = category ? productsData.filter(item => item.category == category) : productsData
 
