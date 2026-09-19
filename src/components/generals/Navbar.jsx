@@ -9,21 +9,21 @@ export default function Navbar() {
         <nav className='sticky top-0 z-50 bg-white shadow'>
             <div className='container mx-auto flex items-center justify-between p-4'>
                 <Link href={'/'} className='text-2xl'>Dara</Link>
-                <menu>
+                <menu className='max-md:hidden'>
                     <ul className='md:flex space-x-6'>
-                        <li><Link href={'/'} className='hover:text-blue-600'>Home</Link></li>
-                        <li><Link href={'/products'} className='hover:text-blue-600'>Products</Link></li>
-                        <li><Link href={'/blogs'} className='hover:text-blue-600'>Blogs</Link></li>
+                        <li><Link href={'/'}>Home</Link></li>
+                        <li><Link href={'/products'}>Products</Link></li>
+                        <li><Link href={'/blogs'}>Blogs</Link></li>
                     </ul>
                 </menu>
-                <div className='flex items-center space-x-4'>
+                <div className='flex items-center space-x-4 max-md:hidden'>
                     <Link href={'/checkout'}>
-                        <button className='bg-blue-700 relative rounded-lg text-white shadow px-4 py-2 cursor-pointer'>
+                        <button className='bg-red-800 relative rounded-lg text-white shadow px-4 py-2 cursor-pointer'>
                             Checkout 🛒
                             {cart.length > 0 && <div className='absolute -left-2 -top-2'>
                                 <span className="relative flex size-3">
-                                    <span className="absolute inline-flex size-3 p-2 animate-ping rounded-full bg-red-400 opacity-75"></span>
-                                    <span className="relative size-3 rounded-full p-2 flex justify-center items-center bg-red-500">{cart.length}</span>
+                                    <span className="absolute inline-flex size-3 p-2 animate-ping rounded-full bg-red-600 opacity-75"></span>
+                                    <span className="relative size-3.5 rounded-full p-2 flex justify-center items-center bg-red-900">{cart.length}</span>
                                 </span>
                             </div>}
                         </button>
