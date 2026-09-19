@@ -31,7 +31,7 @@ export default function AccordionBasic() {
         <Accordion defaultValue={["item-1"]} className="max-w-md">
             {items.map((item) => (
                 <AccordionItem key={item.value} value={item.value}>
-                    <AccordionTrigger className={'text-black'}>{item.trigger}</AccordionTrigger>
+                    <AccordionTrigger className='text-black font-bold text-lg'>{item.trigger}</AccordionTrigger>
                     <AccordionContent>{item.content}</AccordionContent>
                 </AccordionItem>
             ))}
