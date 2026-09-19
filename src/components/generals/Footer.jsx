@@ -20,9 +20,9 @@ export default function Footer() {
                 <div className='md:w-1/3 p-4'>
                     <h3 className='text-2xl font-bold'>trend blogs</h3>
                     <ul className='space-y-4 mt-4 *:text-lg'>
-                        <li>firt blog</li>
-                        <li>second blog</li>
-                        <li>third blog</li>
+                        <li><Link href='/blogs/1' className='text-lg'>sunt aut facere repellat provident...</Link></li>
+                        <li><Link href='/blogs/2' className='text-lg'>qui est esse</Link></li>
+                        <li><Link href='/blogs/3' className='text-lg'>ea molestias quasi exercitat..</Link></li>
                     </ul>
                 </div>
             </div>
